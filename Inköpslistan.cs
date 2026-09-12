@@ -23,7 +23,21 @@ while (true) // Denna while loopen upprepar allt inom den för alltid eftersom j
 
     Console.Write("Skriv en vara: "); 
     string input = Console.ReadLine(); // läser det användaren har matat in som en sträng och kallar det för input.
-    Console.WriteLine($"Du skrev: {input}"); 
+    Console.Write("Pris: ");
+    string prisText = Console.ReadLine();
+    
+if (int.TryParse(prisText, out int pris)) // if sats. inehåller en tryparce som försöker att omvandlara användarens inmatning från sträng till en integer. 
+    {
+        names.Add(input);
+        prices.Add(pris);
+                            // Lägger till inmatningen i respektive listor. 
+        Console.WriteLine($"{input} kostar {pris}");
+       
+    }
+else // ifall användare inte skriver ett giltigt heltal.
+    {
+      Console.WriteLine("Priset måste vara ett heltal.");  
+    }
 }
 
 
